@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import whoweare from"../views/whoweare.vue"
+import service from"../views/service.vue"
+import works from"../views/works.vue"
+import member from"../views/member.vue"
+import contact from"../views/contact.vue"
 
 Vue.use(VueRouter)
 
@@ -14,36 +18,41 @@ Vue.use(VueRouter)
   {
     path: '/whoweare',
     name: 'Who we are',
-    component: () => import(/* webpackChunkName:"WHOWEARE" */ "../views/whoweare.vue")
+    component: whoweare
   },
   {
     path: '/service',
     name: 'Service',
-    component: () => import(/* webpackChunkName:"SERVICE" */"../views/service.vue")
+    component: service
   },
   {
     path: '/works',
     name: 'Works',
-    component: () => import(/* webpackChunkName:"WORKS" */"../views/works.vue")
+    component:works
   },
   {
     path: '/member',
     name: 'Member',
-    component: () => import(/* webpackChunkName:"MEMBER" */"../views/member.vue")
+    component: member
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: () => import(/* webpackChunkName:"CONTACT" */"../views/contact.vue")
+    component:contact
   }
 
 
 ]
+
+
+
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
+
 
 export default router

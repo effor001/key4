@@ -1,14 +1,15 @@
 <template>
   <nav id="nav">
     <div class="menu-wrap">
-      <input type="checkbox" class="toggler">
+      <input type="checkbox" class="toggler" id="nav">
       <div class="hamburger"><div></div></div>
-      <div class="menu">
+      <div class="menu" >
+
         <div>
           <div>
-            <ul>
-              <router-link tag="li" to="/"><a>HOME</a></router-link>
-              <router-link tag="li" to="/whoweare"><a>WHO WE ARE</a></router-link>
+            <ul >
+              <router-link tag="li"  to="/""><a>HOME</a></router-link>
+              <router-link tag="li" to="/whoweare"><a >WHO WE ARE</a></router-link>
                <router-link tag="li" to="/service"><a>SERVICE</a></router-link>
                 <router-link tag="li" to="/works"><a>WORKS</a></router-link>
                  <router-link tag="li" to="/member"><a>MEMBER</a></router-link>
@@ -22,8 +23,17 @@
   </nav>
 
 </template>
+<script>
+export default{
+watch: {
+  $route(to) {
+      const menuipt = document.getElementById('#nav');
+      menuipt.checked = false;
 
-
+  }
+}
+}
+</script>
 <style scoped>
 /*menu-styles */
 .menu-wrap{
