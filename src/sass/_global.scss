@@ -1,0 +1,61 @@
+// ===========
+// 基本設定
+// ===========
+// 画面幅
+  // 全体の幅
+    $width-wrap: 100%;
+  // コンテンツエリア
+    $main-wrap: 90%;
+  // サイドエリア
+    $side-wrap: $width-wrap - $main-wrap - 10;
+
+// 色関係
+  // サイトカラー
+// フォント関係の設定
+  $main-font:"Orbitron", sans-serif;
+  // フォントカラー
+    $font-color:#383736;
+  // リンクカラー
+    $hover-color:#893573;
+// ブレイクポイント
+  $breakpoints:(
+    xs:"only screen and (max-width: 320px)",
+    s:"only screen and (max-width:575px)",
+    m:"only screen and (max-width: 767px)",
+    l: "only screen and (max-width: 991px)",
+    xl:"only screen and (max-width: 1199px)",
+    );
+
+// z-index
+  $layer:(
+  default :1,
+  nav:100
+  );
+
+// @mixin
+  // clearfix
+  @mixin clearfix {
+    &::after{
+      content:"";
+      display: block;
+      clear:both;
+    }
+  }
+  // ホバーカラー設定
+  @mixin link-color($n:$font-color,$h:$hover-color) {
+    color: $n;
+    &:hover {
+      color:$h;
+      text-decoration: none;
+    }
+  }
+  // z-index
+  @mixin z-index($key){
+    z-index: map-get($layer, $key);
+  }
+  // メディアクエリ @include media(例s、mなど){}の形で取得可能
+  @mixin media($breakpoint){
+    @media #{map-get($breakpoints, $breakpont)}{
+      @content;
+    }
+  }
