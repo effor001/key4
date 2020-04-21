@@ -5,7 +5,7 @@
     </div>
     <div class="container main">
       <kinesis-container>
-        <kinesis-element :strength="50"  type="depth" originX="100" originY="0">
+        <kinesis-element :strength="10"  type="depth" originX="100" originY="0">
         <img src="../assets/bird_2.svg" alt="" class="bird2">
          </kinesis-element>
        </kinesis-container>
@@ -33,12 +33,14 @@
 }
 .para{
   width:50%;
-  margin:-5em 0em 10em 10em;
+  margin:-15em 0em 10em 3em;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:center;
   .title{
-    width:17em;
+  width: 4em;
+  transform: rotate(90deg);
+  margin: -2em 3em -6em 7em;
   }
   p{
     display: -webkit-box;
@@ -47,7 +49,7 @@
      -webkit-box-pack: justify;
      -ms-flex-pack: justify;
      justify-content: space-between;
-     margin:-1em 3em 0 3em;
+     margin:0 3em 0 0;
   }
 }
 .images{
@@ -56,18 +58,18 @@
   justify-content:center;
 
   .town{
-    width:85%;
+    width:100%;
     display:block;
     height:auto;
-    margin:-24em auto 1em 10em;
+    margin:-24em auto 1em auto;
   }
 
 }
 .bird2{
   position:relative;
-  top:5em;
-  right:-50em;
-  width:14em;
+  top:0em;
+  right:-55em;
+  width:10em;
   transform: matrix(1, -0.03, 0.03, 1, 0, 0);
 }
 </style>

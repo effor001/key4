@@ -1,11 +1,10 @@
 <template>
   <div id="app">
- <div id="stalker"></div>
     <nav id="nav">
       <div class="menu-wrap">
         <input type="checkbox" class="toggler" id="navbar">
         <div class="hamburger"><div></div></div>
-        <div class="menu" >
+        <div class="menu">
           <div>
             <div>
               <ul>
@@ -17,52 +16,54 @@
                     <router-link tag="li" to="/contact"><a>CONTACT</a></router-link>
                     <p><small>&copy; 2020 key4d lab.</small></p>
                 </ul>
-
             </div>
           </div>
         </div>
       </div>
-      </nav>
-      <div class="side">
-        <div class="menu_p">
-        <p>menu</p></div>
-        <div class="sns_icons">
-          <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x"  />
-           <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" />
+    </nav>
+    <div class="side-l">
 
-               <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/>
-                 <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x" class="fa-0" />
-        </div>
-        <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
+      <div class="sns_icons">
+        <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x"  />
+        <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" />
+        <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/>
+        <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x" class="fa-0" />
       </div>
+      <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
+      </div>
+
+    <div class="side-menu">
+      <ul>
+        <router-link tag="li"  to="/"><a>HOME</a></router-link>
+        <router-link tag="li" to="/whoweare"><a >WHO WE ARE</a></router-link>
+        <router-link tag="li" to="/service"><a>SERVICE</a></router-link>
+        <router-link tag="li" to="/works"><a>WORKS</a></router-link>
+        <router-link tag="li" to="/member"><a>MEMBER</a></router-link>
+        <router-link tag="li" to="/contact"><a>CONTACT</a></router-link>
+      </ul>
+    </div>
+    <div id="stalker"></div>
     <transition name="base-anim">
     <router-view/>
     </transition>
   </div>
 </template>
+
 <script>
-
 import Vue from 'vue'
-import VueKinesis from 'vue-kinesis'
 import stalker from '@/components/stalker'
-
+import VueKinesis from 'vue-kinesis'
 export default{
   stalker,
   watch: {
   $route(to) {
-　　  const menuipt = document.getElementById('navbar');
-　　        menuipt.checked = false;
-
+    const menuipt = document.getElementById('navbar');
+        menuipt.checked = false;
 }
-},
-
-
+}
 }
 
 Vue.use(VueKinesis)
-
-
-
 
 </script>
 <style lang="scss">
@@ -70,7 +71,7 @@ Vue.use(VueKinesis)
 // 全体設定
 
   body{
-    background:white;
+    background:#86847a;
     font-family:$main-font;
     color:$font-color;
     background-image:url("assets/digital_kairo2.svg");
@@ -88,14 +89,19 @@ Vue.use(VueKinesis)
     line-height: 2.4;
   }
 
+  a{
+    text-decoration:none;
+    color:$font-color;
+    &:hover{
+      color:$hover-color;
+    }
+  }
+
 
 
   #app{
     background: #fff;
-    width: 50%;
-    padding:5px;
-    border-radius: 10px;
-    height: calc(60% -50px);
+
   }
 
   .page{
@@ -135,10 +141,35 @@ Vue.use(VueKinesis)
 // コンテンツエリア
   .main{
     width: $main-wrap;
+    margin-left:10%;
   }
-  .side{
-    width: $side-wrap;
+  .side-l{
+    width: $side-wrap-l;
     writing-mode: vertical-lr;
+    left:0;
+  }
+  .side-menu{
+    display:fixed;
+    position:relative;
+    width:100%;
+    height:3em;
+    top:40em;
+    right:-42em;
+    background-color:$font-color;
+    white-space: nowrap;
+    transform:rotate(90deg);
+    z-index:999;
+      &_ul,li{
+      display:inline;
+      list-style:none;
+      margin:1em;
+      }
+      .router-link-active{
+        display:inline-block;
+      }
+  }
+  .side-menu a{
+    color:#d8d7cd !important;
   }
 // ボタン
   .btn{
@@ -160,18 +191,13 @@ Vue.use(VueKinesis)
    }
  }
  // サイド
- .menu_p{
-   transform: rotate3d(-12, -16, -122, 136deg);
-    margin-top: 1em;
-    margin-bottom: -3em;
-    margin-left: 2em;
- }
+
 // コピーライト
  .copy{
    writing-mode:vertical-lr;
    bottom:3em;
    position:fixed;
-   margin-left:0.8em;
+   margin-left:2.5em;
    font-size:0.8rem;
 
 }
@@ -180,11 +206,12 @@ Vue.use(VueKinesis)
   display:flex;
   justify-content:space-around;
   position:absolute;
-  top:20%;
-  left:1em;
+  top:-11em;
+  left:2em;
   font-size: 1rem;
   color:$font-color;
-  margin-top:2em;
+  margin-top:22em;
+  z-index:998;
 
  .fa-twitter{
   margin-bottom:1em;
@@ -222,8 +249,8 @@ Vue.use(VueKinesis)
 }
 .menu-wrap .hamburger{
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   z-index: 10000;
   width: 33px;
   height: 42px;

@@ -10,12 +10,7 @@
           <img src="../assets/bird_4.svg" alt="" class="bird">
         </div>
         <div class="para">
-          <div class="dialog">
-            <div class="dialog__inner">
-              <h3>My Dialog</h3>
-              <p>Content</p>
-              <a class="btn" @click="close">Close</a>
-            </div>
+        
           </div>
           <img src="../assets/contact.svg" alt="" class="title">
           <p>key4d lab. は東京都文京区を拠点にして、 WEBサイト制作、WEBアプリケーション開発、 イラスト制作、広告及びブランド構築の支援をしています。デザインの力で貴社の魅力を最大限引き出して現在抱えている課題の解決、及び目標への強い追い風となります。気になることがあればお気軽にご連絡ください。</p>

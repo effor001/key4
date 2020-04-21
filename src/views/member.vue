@@ -6,7 +6,12 @@
       </div>
       <div class="main container">
         <div class="para">
-          <img src="../assets/bird_5.svg" alt="" class="birds">
+          <kinesis-container>
+            <kinesis-element :strength="10"  type="depth" >
+            <img src="../assets/bird_5.svg" alt="" class="birds">
+             </kinesis-element>
+           </kinesis-container>
+
           <img src="../assets/member_1.svg" alt="" class="title">
           <h2>NYAHON/にゃほん</h2>
           <p>デザイン・コーディング、イラスト製作、3Dモデリング、アプリケーション開発、ブランド戦略、マーケティング</p>

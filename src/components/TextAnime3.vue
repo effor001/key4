@@ -17,9 +17,9 @@ export default {
       index: 0,
       // オリジナルメッセージ
       original: [
-        'Design',
-        'Technology',
-        'Playfulness'
+        'Hack the ordinary.',
+        'Beyond the border.',
+        'Paint with your colors.'
       ],
       // 分解したメッセージ
       messages: [],
@@ -74,14 +74,14 @@ export default {
   display:block;
   color:$font-color;
   position:absolute;
-  top:7em;
-  right:9em;
+  bottom:-7em;
+  left:10em;
   z-index:5;
 }
 .title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-family:DINK, sans-serif;
-  opacity:0.6;
+  opacity:0.8;
 }
 .item {
   display: inline-block;

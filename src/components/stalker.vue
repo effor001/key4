@@ -1,11 +1,12 @@
 <template>
    <div id="stalker"></div>
+
 </template>
 <script>
 //マウスストーカー用のdivを取得
 const stalker = document.getElementById('stalker');
 
-//aタグにホバー中かどうかの判別フラグ
+//menuにホバー中かどうかの判別フラグ
 let hovFlag = false;
 
 //マウスに追従させる処理 （リンクに吸い付いてる時は除外する）
@@ -16,7 +17,7 @@ document.addEventListener('mousemove', function (e) {
 });
 
 //リンクへ吸い付く処理
-const linkElem = document.querySelectorAll('nav:not(.no_stick_)');
+const linkElem = document.querySelectorAll('nav , li :not(.no_stick_)',);
 for (let i = 0; i < linkElem.length; i++) {
     //マウスホバー時
     linkElem[i].addEventListener('mouseover', function (e) {
@@ -46,13 +47,15 @@ for (let i = 0; i < linkElem.length; i++) {
    position: fixed;
    top: -8px;     //座標調節（カーソル位置と円の中心を合わせる）
    left: -8px;    //座標調節（カーソル位置と円の中心を合わせる）
-   width: 16px;   //マウスストーカーの直径
-   height: 16px;  //マウスストーカーの直径
+   width: 20px;   //マウスストーカーの直径
+   height: 20px;  //マウスストーカーの直径
    background: purple;
    border-radius: 50%;
    transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
-   transition-timing-function: ease-out;
-   z-index: 999;
+   -webkit-transition:transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
+   transition-timing-function: cubic-bezier(.97,.23,.6,.97);
+   -webkit-transition:transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
+   z-index: 10001;
    &.hov_{
      top: -32px;     //大きさに合わせて座標調節
      left: -32px;    //大きさに合わせて座標調節
