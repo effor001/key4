@@ -2,16 +2,20 @@
   <div class="home page">
     <div class="container">
       <div class="side">
-        <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
       </div>
       <div class="main">
             <div class="title">
-            <img src="../assets/main-logo.svg" alt="" class="logo">
+
+                <img src="../assets/main-logo.svg" alt="" class="logo">
+
+
             <p>Design×Technologyで</br>「貴方らしさ」を追求したWebサイトを</p>
             </div>
         <div class="images">
           <TextAnime3 :autoplay="autoplay"/>
+
           <img src="../assets/pigeon.png" alt="" class="main-img">
+
         </div>
       </div>
     </div>
@@ -81,10 +85,11 @@ export default {
   }
   .main-img{
     position: relative;
-    top: 0;
-    right:0;
-    width: auto;
-    max-height: 100vh;
+    top: -50px;
+    right:-20px;
+    width: 100%;
+    max-width: 100%;
+    height:auto;
     transform: rotateY(180deg);
     z-index:1;
 }

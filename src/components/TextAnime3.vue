@@ -76,7 +76,6 @@ export default {
   position:absolute;
   top:7em;
   right:9em;
-
   z-index:5;
 }
 .title {

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+ <div id="stalker"></div>
     <nav id="nav">
       <div class="menu-wrap">
         <input type="checkbox" class="toggler" id="navbar">
@@ -7,7 +8,7 @@
         <div class="menu" >
           <div>
             <div>
-              <ul >
+              <ul>
                 <router-link tag="li"  to="/"><a>HOME</a></router-link>
                 <router-link tag="li" to="/whoweare"><a >WHO WE ARE</a></router-link>
                  <router-link tag="li" to="/service"><a>SERVICE</a></router-link>
@@ -15,13 +16,25 @@
                    <router-link tag="li" to="/member"><a>MEMBER</a></router-link>
                     <router-link tag="li" to="/contact"><a>CONTACT</a></router-link>
                     <p><small>&copy; 2020 key4d lab.</small></p>
-  </ul>
+                </ul>
 
-  </div>
-  </div>
-  </div>
-  </div>
-    </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      </nav>
+      <div class="side">
+        <div class="menu_p">
+        <p>menu</p></div>
+        <div class="sns_icons">
+          <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x"  />
+           <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" />
+
+               <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/>
+                 <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x" class="fa-0" />
+        </div>
+        <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
+      </div>
     <transition name="base-anim">
     <router-view/>
     </transition>
@@ -31,16 +44,18 @@
 
 import Vue from 'vue'
 import VueKinesis from 'vue-kinesis'
-
+import stalker from '@/components/stalker'
 
 export default{
+  stalker,
   watch: {
   $route(to) {
 　　  const menuipt = document.getElementById('navbar');
 　　        menuipt.checked = false;
 
-  }
 }
+},
+
 
 }
 
@@ -72,6 +87,7 @@ Vue.use(VueKinesis)
     font-size:1.25rem;
     line-height: 2.4;
   }
+
 
 
   #app{
@@ -143,12 +159,45 @@ Vue.use(VueKinesis)
      color:$hover-color;
    }
  }
+ // サイド
+ .menu_p{
+   transform: rotate3d(-12, -16, -122, 136deg);
+    margin-top: 1em;
+    margin-bottom: -3em;
+    margin-left: 2em;
+ }
 // コピーライト
  .copy{
    writing-mode:vertical-lr;
-   margin-top:10em;
+   bottom:3em;
    position:fixed;
+   margin-left:0.8em;
+   font-size:0.8rem;
 
+}
+// SNS icons
+.sns_icons{
+  display:flex;
+  justify-content:space-around;
+  position:absolute;
+  top:20%;
+  left:1em;
+  font-size: 1rem;
+  color:$font-color;
+  margin-top:2em;
+
+ .fa-twitter{
+  margin-bottom:1em;
+}
+.fa-chevron-right{
+  transform:rotate(90deg);
+  margin-bottom:1em;
+  margin-left:0.2em;
+}
+ .fa-0{
+   transform:rotate(-90deg);
+   margin-top:1em;
+}
 }
 // アクティブリンク
 .router-link-exact-active{
