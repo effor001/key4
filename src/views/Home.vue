@@ -1,7 +1,6 @@
 <template>
   <div class="home page">
     <div class="container">
-
       <div class="main">
         <div class="title">
           <img src="../assets/key4d_lab_title.png" alt="" class="logo">
@@ -33,11 +32,15 @@ export default {
 
 </script>
 <style lang="scss" scoped>
+  .home{
+    overflow:hidden;
+  }
   .container{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     width:$width-wrap;
+
   }
 
   .main{
@@ -47,16 +50,15 @@ export default {
     .title{
       display:flex;
       flex-direction:column;
-      justify-content:space-evenly;
-      text-align:left;
-      margin:32em 0 0 2em;
+      justify-content:left;
+      margin:40em 0 0 2em;
       p{
         margin-right:-5em;
         z-index:5;
       }
   }
   .logo{
-    width: 20em;
+    width: 50%;
     z-index:3;
     margin-top:-20em;
   }
@@ -64,7 +66,7 @@ export default {
     position: absolute;
     top: -13em;
     right: -4em;
-    width: 80%;
+    width: 85%;
     max-width: 100%;
     height: auto;
     transform: rotateZ(5deg)rotateY(180deg);

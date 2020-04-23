@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav id="nav">
+    <nav id="nav" class="nav">
       <div class="menu-wrap">
         <input type="checkbox" class="toggler" id="navbar">
         <div class="hamburger"><div></div></div>
@@ -21,20 +21,26 @@
         </div>
       </div>
     </nav>
+    <custom-cursor
+    :targets="['toggler', 'a', 'button']"
+    :circleColor="'purple'"
+    :circleColorHover="'lightblue'"
+    :hoverSize="2"
+  ></custom-cursor>
     <div class="side-l">
-
       <div class="sns_icons">
         <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x"  />
-        <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" />
-        <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/>
+        <a href="https://twitter.com/AR_OL_chan">
+        <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" /></a>
+        <a href="#">
+        <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
         <font-awesome-icon :icon="['fas', 'chevron-right']" size="2x" class="fa-0" />
       </div>
       <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
       </div>
-
     <div class="side-menu">
       <ul>
-        <router-link tag="li"  to="/"><a>HOME</a></router-link>
+        <router-link tag="li" to="/"><a>HOME</a></router-link>
         <router-link tag="li" to="/whoweare"><a >WHO WE ARE</a></router-link>
         <router-link tag="li" to="/service"><a>SERVICE</a></router-link>
         <router-link tag="li" to="/works"><a>WORKS</a></router-link>
@@ -42,19 +48,21 @@
         <router-link tag="li" to="/contact"><a>CONTACT</a></router-link>
       </ul>
     </div>
-    <div id="stalker"></div>
     <transition name="base-anim">
     <router-view/>
     </transition>
   </div>
+
 </template>
 
 <script>
 import Vue from 'vue'
-import stalker from '@/components/stalker'
 import VueKinesis from 'vue-kinesis'
+import CustomCursor from '@/components/CustomCursor'
 export default{
-  stalker,
+  components:{
+   CustomCursor
+ },
   watch: {
   $route(to) {
     const menuipt = document.getElementById('navbar');
@@ -75,15 +83,14 @@ Vue.use(VueKinesis)
     font-family:$main-font;
     color:$font-color;
     background-image:url("assets/digital_kairo2.svg");
+    background-attachment:fixed;
     background-color:rgba(255,255,255,0.8);
     background-blend-mode:lighten;
     background-size:cover;
     background-repeat:no-repeat;
     overflow:hidden;
   }
-  html, body {
-    height: calc(100% - 50px);
-  }
+
   p{
     font-size:1.25rem;
     line-height: 2.4;
@@ -97,16 +104,18 @@ Vue.use(VueKinesis)
     }
   }
 
-
-
   #app{
-    background: #fff;
-
+    background: none;
   }
 
   .page{
-    position: fixed;
-    width: $width-wrap;
+  width: $width-wrap;
+   overflow-x:hidden;
+   position:absolute;
+   left:0;
+   right:0;
+   top:0;
+   bottom:0;
   }
 
   .base-anim-enter-active{
@@ -115,7 +124,7 @@ Vue.use(VueKinesis)
     opacity: 0;
   }
   .base-anim-leave-active{
-    animation: going .2s;
+    animation: going .8s;
   }
 
   @keyframes going{
@@ -123,14 +132,14 @@ Vue.use(VueKinesis)
       transform: translateX(0);
     }
     to{
-      transform: translateX(-50px);
+      transform: translateX(500px);
       opacity:0;
     }
   }
 
   @keyframes coming{
     from{
-      transform: translateX(-50px);
+      transform: translateX(-500px);
       opacity: 0;
     }
     to{
@@ -149,28 +158,34 @@ Vue.use(VueKinesis)
     left:0;
   }
   .side-menu{
-    display:fixed;
-    position:relative;
-    width:100%;
-    height:3em;
-    top:40em;
-    right:-42em;
+    display:flex;
+    position:fixed;
+    width:$side-wrap-r - 5%;
+    height:100%;
+    top:0;
+    right:0;
     background-color:$font-color;
     white-space: nowrap;
-    transform:rotate(90deg);
+    writing-mode:vertical-lr;
     z-index:999;
       &_ul,li{
       display:inline;
       list-style:none;
       margin:1em;
+
       }
       .router-link-active{
         display:inline-block;
+
       }
   }
   .side-menu a{
-    color:#d8d7cd !important;
+    color:#d8d7cd;
+    &:hover{
+      color:$hover-color;
+    }
   }
+
 // ボタン
   .btn{
     display: inline-block;
@@ -205,7 +220,7 @@ Vue.use(VueKinesis)
 .sns_icons{
   display:flex;
   justify-content:space-around;
-  position:absolute;
+  position:fixed;
   top:-11em;
   left:2em;
   font-size: 1rem;
@@ -227,9 +242,12 @@ Vue.use(VueKinesis)
 }
 }
 // アクティブリンク
+
+
 .router-link-exact-active{
   color:$font-color !important;
 }
+
 /*menu-styles */
 .menu-wrap{
   position: fixed;

@@ -18,7 +18,7 @@ Vue.use(VueRouter)
   {
     path: '/whoweare',
     name: 'Who we are',
-    component: whoweare
+    component: whoweare,
   },
   {
     path: '/service',

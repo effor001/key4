@@ -2,7 +2,6 @@
   <div class="works page">
     <div class="container">
       <div class="side">
-        <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
       </div>
       <div class="main container">
         <div class="images">
@@ -20,18 +19,23 @@
 </template>
 
 <style lang="scss" scoped>
-
+.works{
+  width:$width-wrap;
+  overflow-y:scroll;
+  &::-webkit-scrollbar{
+    display:none;
+  }
+}
   .container{
   display:flex;
   flex-direction:row;
-
   }
 
   .para{
   width:50%;
   text-align:justify;
   justify-content:center;
-  margin:10em 5em 10em 10em;
+  margin:15em 5em 10em 10em;
    .title {
     width:18em;
     height:auto;

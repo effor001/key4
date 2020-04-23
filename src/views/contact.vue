@@ -1,17 +1,13 @@
 <template>
   <div class="contact page">
     <div class="container">
-      <div class="side">
-        <div class="copy">&copy 2020 Key4d lab. all rights reserved.</div>
-      </div>
+
       <div class="main container">
         <div class="images">
           <img src="../assets/astronaut002_0.png" alt="" class="astro">
           <img src="../assets/bird_4.svg" alt="" class="bird">
         </div>
         <div class="para">
-        
-          </div>
           <img src="../assets/contact.svg" alt="" class="title">
           <p>key4d lab. は東京都文京区を拠点にして、 WEBサイト制作、WEBアプリケーション開発、 イラスト制作、広告及びブランド構築の支援をしています。デザインの力で貴社の魅力を最大限引き出して現在抱えている課題の解決、及び目標への強い追い風となります。気になることがあればお気軽にご連絡ください。</p>
         </div>
@@ -41,7 +37,7 @@ export default {
   width:50%;
   text-align:justify;
   justify-content:center;
-  margin:10em 5em 10em 10em;
+  margin:20em 5em 10em 10em;
    .title {
     width:18em;
     height:auto;
