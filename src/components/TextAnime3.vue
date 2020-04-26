@@ -74,7 +74,7 @@ export default {
   display:block;
   color:$font-color;
   position:absolute;
-  bottom:15em;
+  bottom:12%;
   z-index:5;
 }
 .title {
