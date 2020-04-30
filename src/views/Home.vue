@@ -1,17 +1,15 @@
 <template>
   <div class="home page">
     <div class="container">
-      <div class="main">
         <div class="title">
           <img src="../assets/key4d_lab_title.png" alt="" class="logo">
           <TextAnime3 :autoplay="autoplay"/>
         </div>
         <div class="images">
-
-          <img src="../assets/pigeon.png" alt="" class="main-img">
+          <img src="../assets/falcon.png" alt="" class="main-img">
         </div>
       </div>
-    </div>
+
   </div>
 
 </template>
@@ -40,32 +38,24 @@ export default {
     flex-direction:row;
     justify-content:space-between;
     width:$width-wrap;
-
+    height:100vh;
+    background-color: purple;
   }
-
-  .main{
+  .title{
     display:flex;
-    flex-direction:row;
-  }
-    .title{
-      display:flex;
-      flex-direction:column;
-      justify-content:left;
-      margin:40em 0 0 2em;
-      p{
-        margin-right:-5em;
-        z-index:5;
-      }
-  }
-  .logo{
+    flex-direction:column;
+    justify-content:center;
+    margin:0 15%;
+    background-color: yellow;
+    .logo{
     width: 50%;
     z-index:3;
-    margin-top:-20em;
+    }
   }
   .main-img{
     position: absolute;
-    top: -13em;
-    right: -4em;
+    top: -10%;
+    right: -5%;
     width: 85%;
     max-width: 100%;
     height: auto;

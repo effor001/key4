@@ -95,7 +95,12 @@ Vue.use(VueKinesis)
     font-size:1.25rem;
     line-height: 2.4;
   }
-
+  h1{
+    font-size:1rem;
+  }
+  h2{
+    font-size:2rem;
+  }
   a{
     text-decoration:none;
     color:$font-color;
@@ -148,10 +153,6 @@ Vue.use(VueKinesis)
     }
 }
 // コンテンツエリア
-  .main{
-    width: $main-wrap;
-    margin-left:10%;
-  }
   .side-l{
     width: $side-wrap-l;
     writing-mode: vertical-lr;
@@ -210,22 +211,19 @@ Vue.use(VueKinesis)
 // コピーライト
  .copy{
    writing-mode:vertical-lr;
-   bottom:3em;
+   bottom:5%;
    position:fixed;
    margin-left:2.5em;
    font-size:0.8rem;
-
 }
 // SNS icons
 .sns_icons{
   display:flex;
   justify-content:space-around;
   position:fixed;
-  top:-11em;
-  left:2em;
   font-size: 1rem;
   color:$font-color;
-  margin-top:22em;
+  margin:10% 0 0 2%;
   z-index:998;
 
  .fa-twitter{

@@ -1,17 +1,13 @@
 <template>
   <div class="works page">
     <div class="container">
-      <div class="side">
-      </div>
-      <div class="main container">
-        <div class="images">
-          <img src="../assets/bird_3.svg" alt="" class="bird3">
-          <img src="../assets/diamond2.png" alt="" class="diamond2">
-          <img src="../assets/turntable-key4x.png" alt="" class="turntable">
-        </div>
+      <div class="header">
         <div class="para">
-          <img src="../assets/works.svg" alt="" class="title">
+          <h1><img src="../assets/works.svg" alt="" class="title"></h1>
           <p>一般企業サイトからECサイトやランディングページなどどんな形態のWEBサイトも柔軟に幅広い製作に携わっています。イラストデザインにも強みがあり、名刺やパンフレットの製作などを通じてお客様のブランド構築のお手伝いも承っております。</p>
+        </div>
+        <div class="images">
+          <img src="../assets/birds-woman4.png" alt="" class="bird_woman">
         </div>
       </div>
     </div>
@@ -26,61 +22,35 @@
     display:none;
   }
 }
-  .container{
+.container{
+  background-color: blue;
+  width:$main-wrap;
+  margin:5% 0 0 10% ;
+}
+.header{
+  background-color: purple;
   display:flex;
   flex-direction:row;
-  }
-
-  .para{
-  width:50%;
+  justify-content: center;
+}
+.para{
+  flex:1;
   text-align:justify;
   justify-content:center;
-  margin:15em 5em 10em 10em;
    .title {
-    width:18em;
+    width:40%;
     height:auto;
     margin-bottom:2em;
     }
-  p{
-    display: -webkit-box;
-     display: -ms-flexbox;
-     display: flex;
-     -webkit-box-pack: justify;
-     -ms-flex-pack: justify;
-     justify-content: space-between;
   }
-  }
-
-  .images{
-    width:50%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  .bird3{
-    width:6em;
-    position:relative;
-    display:block;
-    top:-2em;
-    margin:0 auto;
-    z-index:3;
-  }
-  .diamond2{
-    width:7em;
-    display:block;
-    position:relative;
-    top:-3em;
-    transform:translateX(14px);
-    margin: 0 auto;
-    z-index:2;
-  }
-  .turntable{
-    width: 30em;
-    display: block;
-    position: absolute;
-    margin-left:2.2em;
-    top:10em;
-    z-index:1;
-  }
+.images{
+  width:50%;
+  background-color: blue;
+    .bird_woman{
+      width:auto;
+      height:95%;
+      margin-left:-60%;
+    }
 
   }
 
