@@ -19,6 +19,7 @@
     </div>
   </div>
       <div class="town">
+        <div class="more_to_come"></div>
       <img src="../assets/landscape.png" alt="" class="landscape" >
       </div>
   </div>
@@ -47,7 +48,7 @@
   justify-content: space-between;
   }
 .para{
-  width:40%;
+  width:60%;
   text-align:left;
   background-color: purple;
   .title{
@@ -78,6 +79,21 @@
   .landscape{
     width:80%;
     height:auto;
+  }
+}
+// tentative
+.more_to_come{
+  font-family: DINK,sans-serif;
+  font-size: 5rem;
+  transform: rotate(20deg);
+  transform-origin:bottom;
+  margin-top: 5%;
+  &::before{
+    content:"MORE to come! ";
+    width:200%;
+    height:100%;
+    position:relative;
+    border-style: solid;
   }
 }
 </style>

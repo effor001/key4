@@ -24,8 +24,17 @@
         <div class="member_module">
           <h2>NYAHON/にゃほん</h2>
           <div class="inner_module">
-            <p class="intro_para">デザイン・コーディング、イラスト製作、3Dモデリング、アプリケーション開発、ブランド戦略、マーケティング</p>
-            <img src="@/assets/nyahon2.png" alt="" class="nyahon">
+            <div class="skill_set">
+            <div class="skills"><font-awesome-icon :icon="['fas', 'drafting-compass']" size="3x" class="skill_icon" /><P>デザイン</p></div>
+            <div class="skills"><font-awesome-icon :icon="['fas', 'code']" size="3x" class="skill_icon" /><p>コーディング</p></div>
+            <div class="skills"><font-awesome-icon :icon="['fas', 'palette']" size="3x" class="skill_icon" /><p>イラスト製作</p></div>
+          <div class="skills"><font-awesome-icon :icon="['fas', 'cube']" size="3x" class="skill_icon"/><p>3Dモデリング</p></div>
+          <div class="skills"><font-awesome-icon :icon="['fab', 'app-store']" size="3x" class="skill_icon" /><p>アプリケーション開発</p></div>
+            <div class="skills"><font-awesome-icon :icon="['fas', 'poll']" size="3x" class="skill_icon"/><p>ブランド戦略・マーケティング</p></div>
+            </div>
+            <div class="member_img">
+            <img src="@/assets/nyahon2.png" alt="">
+          </div>
             </div>
           <div class="sns">
             <a href="https://twitter.com/AR_OL_chan">
@@ -37,8 +46,17 @@
         <div class="member_module">
           <h2>TAQUU/たくぅ</h2>
           <div class="inner_module">
-          <img src="@/assets/taquu2.png" alt="" class="nyahon">
-          <p >デザイン・コーディング、アニメーション製作、アプリケーション開発、UI/UXコンサルティング、ブランド戦略、マーケティング</p>
+          <div class="member_img">
+          <img src="@/assets/taquu2.png" alt=""></div>
+          <div class="skill_set">
+          <div class="skills"><font-awesome-icon :icon="['fas', 'drafting-compass']" size="3x" class="skill_icon" /><P>デザイン</p></div>
+          <div class="skills"><font-awesome-icon :icon="['fas', 'code']" size="3x" class="skill_icon" /><p>コーディング</p></div>
+          <div class="skills"><font-awesome-icon :icon="['fas', 'video']" size="3x" class="skill_icon" /><p>アニメーション製作</p></div>
+        <div class="skills"><font-awesome-icon :icon="['fas', 'grin-squint']" size="3x" class="skill_icon"/><p>UI/UXコンサルティング</p></div>
+        <div class="skills"><font-awesome-icon :icon="['fab', 'app-store']" size="3x" class="skill_icon" /><p>アプリケーション開発</p></div>
+          <div class="skills"><font-awesome-icon :icon="['fas', 'poll']" size="3x" class="skill_icon"/><p>ブランド戦略・マーケティング</p></div>
+          </div>
+
           </div>
           <div class="sns">
             <a href="https://twitter.com/AR_OL_chan">
@@ -80,7 +98,7 @@
   left:20%;
 }
 .para{
-  width:50%;
+  width:60%;
   background-color: red;
   display:block;
   text-align:justify;
@@ -90,7 +108,7 @@
   position:relative;
   }
   .title{
-  width:90%;
+  width:100%;
   height:auto;
   }
   p{
@@ -101,8 +119,9 @@
 .images{
   display:block;
   margin:0 auto;
+  flex:1;
   .turntable{
-    width:30em;
+    width:100%;
     display:block;
     position:relative;
     margin:10% auto;
@@ -124,8 +143,12 @@
     margin:auto 1.5%;
     height:10%;
     }
-    .nyahon{
-      width:50%;
+    .member_img{
+      width:60%;
+      height:auto;
+      >img{
+        width:100%;
+      }
     }
     .sns{
     display:flex;
@@ -137,6 +160,33 @@
      }
     }
   }
-
-
+  .skill_set{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width:auto;
+    height:50%;
+    margin:5%;
+    background-color: grey;
+    .skills{
+      background-color: lightpink;
+      width:80%;
+      height:90%;
+      border-radius:50%;
+      border-style: solid  ;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      text-align:center;
+      margin-top: 5%;
+    }
+    .skill_icon{
+      margin: 3%;
+    }
+    p{
+      margin:2%;
+  }
+  }
 </style>

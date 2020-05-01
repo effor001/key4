@@ -10,6 +10,7 @@
           <img src="../assets/birds-woman4.png" alt="" class="bird_woman">
         </div>
       </div>
+    <div class="more_to_come"></div>
     </div>
   </div>
 </template>
@@ -38,7 +39,7 @@
   text-align:justify;
   justify-content:center;
    .title {
-    width:40%;
+    width:60%;
     height:auto;
     margin-bottom:2em;
     }

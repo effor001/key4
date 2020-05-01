@@ -420,4 +420,19 @@ transition: color 0.8s ease;
 .menu-wrap .menu > div > div> ul >li > a:hover{
 color: #483688;
 }
+
+// 建設中
+.more_to_come{
+  font-family: DINK,sans-serif;
+  font-size: 5rem;
+  transform: rotate(20deg);
+  transform-origin:bottom;
+  &::before{
+    content:"MORE to come! ";
+    width:200%;
+    height:100%;
+    position:relative;
+    border-style: solid;
+  }
+}
 </style>

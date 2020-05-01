@@ -5,7 +5,7 @@
       <div class="header">
       <div class="images">
         <kinesis-container event="scroll">
-          <kinesis-element :strength="1000" type="translate" axis="x">
+          <kinesis-element :strength="100"  type="translate" axis="x" transform-origin="right top">
               <img src="../assets/bird_1.svg" alt="" class="bird1">
           </kinesis-element>
         </kinesis-container>
@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="article_wrapper">
-      <div class="policy_module policy1">
+      <div class="policy_module ">
         <h2>Hack the ordinary.</h2>　
         <h3>日常を”ハック”する。</h3>　
-        <div class="inner_module">
+        <div class="inner_module policy1">
           <p>それは「当たり前」を見直すことから始まります。
             webサービスの需要は様々です。<br/>
             何度も打ち合わせを重ねる必要のある大規模開発ばかりではないでしょう。<br />
@@ -40,9 +40,9 @@
         </div>
       </div>
       <div class="policy2">
-        <div class="policy_module policy2">
-          <h2>Paint with your colors.</h2>
-          <h3>貴方の色を見つけましょう。</h3>
+        <div class="policy_module">
+          <h2 class="policy2_ch">Paint with your colors.</h2>
+          <h3 class="policy2_ch">貴方の色を見つけましょう。</h3>
           <div class="inner_module">
             <div class="policy_img">
             <img src="@/assets/paint_ur_color.png" alt="" class="paint_ur_color">
@@ -58,7 +58,7 @@
       </div>
       <div class="policy3">
         <div class="policy_module">
-          <h2>Beyond the border.</h2>
+          <h2 >Beyond the border.</h2>
           <h3>境界線のその先へ。</h3>
           <p>利便性の面でもエンターテイメントの面でも、web技術は年々進化を遂げています。<br />
             今の「最先端」は常に更新され続けています。
@@ -67,7 +67,7 @@
             この進化と時勢を的確に捉えて、ビジネスの可能性を最大限に高めたい。<br />
             Key4d lab.はデザインとテクノロジーの可能性を信じています。
           </p>
-          <div class="policy_img">
+          <div class="policy_img3">
             <img src="@/assets/whale_jump.png" alt="" class="whale">
           </div>
         </div>
@@ -83,6 +83,12 @@
 
 </script>
 <style lang="scss" scoped>
+h2{
+  font-size: 3rem;
+}
+h3{
+  font-size:1.5rem;
+}
 .whoweare {
     width: $width-wrap;
     overflow-y: scroll;
@@ -111,7 +117,7 @@
   width:50%;
   background-color: yellow;
     .title {
-        width: 20em;
+        width: 90%;
         height: auto;
     }
     p{
@@ -129,7 +135,7 @@
     .bird1 {
         position: relative;
         width: 50%;
-        transform: matrix(0.99, -0.16, 0.16, 0.99, 15, 0);
+        transform: rotateY(180deg);
         z-index: 999;
     }
     .hands {
@@ -141,25 +147,42 @@
 .article_wrpper{
   width:$main-wrap;
   margin:0 auto;
-  background-color: pink;
+  background-color: white;
 }
 .policy_module {
     display: flex;
     flex-direction: column;
-    margin-bottom:10%;
+    justify-content:space-evenly;
+    margin:10% auto;
     .inner_module{
       display: flex;
       flex:1;
     }
+    .policy_img{
+      width:50%;
+      text-align:center;
+    }
+    p{
+      flex:1;
+    }
 }
+.policy2_ch {
+  text-align:right;
+}
+
 .candy_cigar {
-    width: 80%;
+    width:100%;
 }
 .paint_ur_color {
     width: 70%;
 }
+.policy_img3{
+  width:100%;
+}
+
 .whale {
+    background-color: blue;
     width: 100%;
-    transform: rotateY(180deg);
+
 }
 </style>
