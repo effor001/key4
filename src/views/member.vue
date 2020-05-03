@@ -2,9 +2,6 @@
   <div class="member page">
     <div class="container">
       <div class="header">
-        <div class="images">
-          <img src="../assets/turntable-key4x.png" alt="" class="turntable">
-        </div>
         <div class="para">
           <div class="hover">
             <img src="@/assets/hover_us.svg" alt="">
@@ -23,6 +20,12 @@
     <div class="introduction">
         <div class="member_module">
           <h2>NYAHON/にゃほん</h2>
+          <div class="sns">
+            <a href="https://twitter.com/AR_OL_chan">
+              <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" /></a>
+            <a href="#">
+              <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
+          </div>
           <div class="inner_module">
             <div class="skill_set">
             <div class="skills"><font-awesome-icon :icon="['fas', 'drafting-compass']" size="3x" class="skill_icon" /><P>デザイン</p></div>
@@ -36,15 +39,16 @@
             <img src="@/assets/nyahon2.png" alt="">
           </div>
             </div>
-          <div class="sns">
-            <a href="https://twitter.com/AR_OL_chan">
-              <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" /></a>
-            <a href="#">
-              <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
-          </div>
+
         </div>
         <div class="member_module">
           <h2>TAQUU/たくぅ</h2>
+          <div class="sns">
+            <a href="https://twitter.com/AR_OL_chan">
+            <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" /></a>
+            <a href="#">
+            <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
+        </div>
           <div class="inner_module">
           <div class="member_img">
           <img src="@/assets/taquu2.png" alt=""></div>
@@ -58,12 +62,7 @@
           </div>
 
           </div>
-          <div class="sns">
-            <a href="https://twitter.com/AR_OL_chan">
-            <font-awesome-icon :icon="['fab', 'twitter']" size="2x" class="fa-1" /></a>
-            <a href="#">
-            <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
-        </div>
+
         </div>
     </div>
 </div>
@@ -79,114 +78,98 @@
     &::-webkit-scrollbar {
         display: none;
     }
-}
-.container{
-  background-color: blue;
-  width:$main-wrap;
-  margin:5% 0 0 10% ;
-}
-.header{
-  background-color: purple;
-  display:flex;
-  flex-direction:row;
-  justify-content: space-between;
-}
-.hover{
-  position:relative;
-  width:6em;
-  top: 5%;
-  left:20%;
-}
-.para{
-  width:60%;
-  background-color: red;
-  display:block;
-  text-align:justify;
-  margin:4em auto;
-  .birds{
-  width:12em;
-  position:relative;
-  }
-  .title{
-  width:100%;
-  height:auto;
-  }
-  p{
-    width:120%;
-  }
-}
-
-.images{
-  display:block;
-  margin:0 auto;
-  flex:1;
-  .turntable{
-    width:100%;
-    display:block;
-    position:relative;
-    margin:10% auto;
-    z-index:1;
-  }
-}
-
-
-.member_module{
-  background-color: yellow;
-  display:flex;
-  flex-direction:column;
-  align-content:space-between;
-  .inner_module{
-    flex:1;
-    display:flex;
-  }
-    p{
-    margin:auto 1.5%;
-    height:10%;
-    }
-    .member_img{
-      width:60%;
-      height:auto;
-      >img{
+  .container{
+    background-color: none;
+    width:$main-wrap;
+    margin:5% 0 0 10% ;
+    .header{
+      background-color: none;
+      display:flex;
+      flex-direction:row;
+      justify-content: space-between;
+      .hover{
+        position:relative;
+        width:6em;
+        top: 5%;
+        left:0;
+      }
+      .birds{
+        width:12em;
+        position:relative;
+      }
+      .para{
         width:100%;
+        background-color: none;
+        display:block;
+        text-align:justify;
+        align-content: center;
+        margin:2em auto;
+        .title{
+          width:40%;
+          height:auto;
+          margin-bottom:2em;
+        }
       }
     }
-    .sns{
-    display:flex;
-    flex:1;
-    background-color: white;
-    justify-content:flex-end;
-     .fa-twitter{
-       margin-right:1.5rem;
-     }
-    }
-  }
-  .skill_set{
-    display:grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    width:auto;
-    height:50%;
-    margin:5%;
-    background-color: grey;
-    .skills{
-      background-color: lightpink;
-      width:80%;
-      height:90%;
-      border-radius:50%;
-      border-style: solid  ;
+    .member_module{
+      background-color: none;
       display:flex;
-      flex-direction: column;
-      align-items: center;
-      text-align:center;
-      margin-top: 5%;
+      flex-direction:column;
+      align-content:space-between;
+      margin-top:10%;
+      .inner_module{
+        flex:1;
+        display:flex;
+        p{
+          margin:auto 1.5%;
+          height:10%;
+        }
+        .member_img{
+          width:60%;
+          height:auto;
+          >img{
+          width:100%;
+          }
+        }
+      }
+      .sns{
+        display:flex;
+        flex:1;
+        background-color: none;
+        justify-content:flex-end;
+         .fa-twitter{
+           margin-right:1.5rem;
+         }
+      }
+      .skill_set{
+        display:grid;
+        flex:1;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        width:auto;
+        height:50%;
+        margin:5%;
+        background-color:none;
+        .skills{
+          background-color: none;
+          width:80%;
+          height:90%;
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          text-align:center;
+          margin-top: 5%;
+        }
+        .skill_icon{
+          margin: 3%;
+        }
+        p{
+          margin:2%;
+        }
+      }
     }
-    .skill_icon{
-      margin: 3%;
-    }
-    p{
-      margin:2%;
   }
-  }
+}
 </style>

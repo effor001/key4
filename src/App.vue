@@ -83,11 +83,10 @@ Vue.use(VueKinesis)
     font-family:$main-font;
     color:$font-color;
     background-image:url("assets/digital_kairo2.svg");
-    background-attachment:fixed;
+    background-repeat:repeat;
     background-color:rgba(255,255,255,0.8);
     background-blend-mode:lighten;
     background-size:cover;
-    background-repeat:no-repeat;
     overflow:hidden;
   }
 
@@ -162,7 +161,7 @@ Vue.use(VueKinesis)
     display:flex;
     position:fixed;
     width:$side-wrap-r - 5%;
-    height:100%;
+    height:100vh;
     top:0;
     right:0;
     background-color:$font-color;
@@ -172,8 +171,7 @@ Vue.use(VueKinesis)
       &_ul,li{
       display:inline;
       list-style:none;
-      margin:1em;
-
+      margin:2%;
       }
       .router-link-active{
         display:inline-block;
@@ -213,7 +211,7 @@ Vue.use(VueKinesis)
    writing-mode:vertical-lr;
    bottom:5%;
    position:fixed;
-   margin-left:2.5em;
+   margin-left:2%;
    font-size:0.8rem;
 }
 // SNS icons

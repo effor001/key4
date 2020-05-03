@@ -24,37 +24,34 @@
   }
 }
 .container{
-  background-color: blue;
+  background-color: none;
   width:$main-wrap;
   margin:5% 0 0 10% ;
-}
-.header{
-  background-color: purple;
-  display:flex;
-  flex-direction:row;
-  justify-content: center;
-}
-.para{
-  flex:1;
-  text-align:justify;
-  justify-content:center;
-   .title {
-    width:60%;
-    height:auto;
-    margin-bottom:2em;
+  .header{
+    background-color: none;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
     }
-  }
-.images{
-  width:50%;
-  background-color: blue;
-    .bird_woman{
-      width:auto;
-      height:95%;
-      margin-left:-60%;
+    .para{
+      flex:1;
+      text-align:justify;
+      justify-content:center;
     }
-
-  }
-
-
+      .title {
+        width:60%;
+        height:auto;
+        margin-bottom:2em;
+      }
+      .images{
+        width:50%;
+        background-color: none;
+        .bird_woman{
+          width:auto;
+          height:95%;
+          margin-left:-60%;
+        }
+      }
+    }
 
 </style>
