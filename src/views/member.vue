@@ -87,6 +87,10 @@
       display:flex;
       flex-direction:row;
       justify-content: space-between;
+      // スマホ
+      @include media(s){
+        flex-direction:column;
+      }
       .hover{
         position:relative;
         width:6em;
@@ -120,6 +124,10 @@
       .inner_module{
         flex:1;
         display:flex;
+        // スマホ
+        @include media(s){
+          display:block;
+        }
         p{
           margin:auto 1.5%;
           height:10%;
@@ -127,6 +135,10 @@
         .member_img{
           width:60%;
           height:auto;
+          // スマホ
+          @include media(s){
+            width:100%;
+          }
           >img{
           width:100%;
           }

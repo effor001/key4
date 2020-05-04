@@ -45,6 +45,10 @@ export default {
         .logo{
           width: 50%;
           z-index:3;
+          // スマホ
+          @include media(s){
+            width:80%;
+          }
           }
       }
       .main-img{
@@ -56,7 +60,15 @@ export default {
         height: auto;
         transform: rotateZ(5deg)rotateY(180deg);
         z-index: 1;
+        // スマホ
+        @include media(s){
+        width:120%;
+        top:0;
+      }
       }
     }
   }
+
+// スマホ
+
 </style>

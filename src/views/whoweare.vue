@@ -77,12 +77,7 @@
 
 </script>
 <style lang="scss" scoped>
-h2{
-  font-size: 3rem;
-}
-h3{
-  font-size:1.5rem;
-}
+
 .whoweare {
     width: $width-wrap;
     overflow-y: scroll;
@@ -135,6 +130,9 @@ h3{
     .inner_module{
       display: flex;
       flex:1;
+      @include media(s){
+        display:block;
+      }
         .policy_img{
           width:100%;
           text-align:center;

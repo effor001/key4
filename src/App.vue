@@ -93,12 +93,26 @@ Vue.use(VueKinesis)
   p{
     font-size:1.25rem;
     line-height: 2.4;
+    @include media(s){
+      font-size:1rem;
+      line-height:1.7;
+    }
   }
   h1{
     font-size:1rem;
+    @include media(s){
+      font-size:0.75rem;
+    }
   }
   h2{
-    font-size:2rem;
+    font-size:3rem;
+    @include media(s){
+      font-size:1rem;
+    }
+  }
+
+  h3{
+    font-size:1.5rem;
   }
   a{
     text-decoration:none;
@@ -107,6 +121,9 @@ Vue.use(VueKinesis)
       color:$hover-color;
     }
   }
+  ul{
+    padding-inline-start: 0px;
+}
 
   #app{
     background: none;
@@ -168,21 +185,26 @@ Vue.use(VueKinesis)
     white-space: nowrap;
     writing-mode:vertical-lr;
     z-index:999;
-      &_ul,li{
+      &_ ul,li{
       display:inline;
       list-style:none;
       margin:2%;
+        .router-link-active{
+          display:inline-block;
+        }
       }
-      .router-link-active{
-        display:inline-block;
-
-      }
+    @include media(s){
+      display:none;
+    }
   }
   .side-menu a{
     color:#d8d7cd;
     &:hover{
       color:$hover-color;
     }
+  }
+  .side-menu ul{
+    margin-top:10%;
   }
 
 // ボタン
@@ -197,7 +219,6 @@ Vue.use(VueKinesis)
     text-align:center;
     text-decoration:none;
     transition:.25s;
-
    &:focus,&:hover{
      background-color: #fff;
      border-color:$font-color;
@@ -223,7 +244,9 @@ Vue.use(VueKinesis)
   color:$font-color;
   margin:10% 0 0 2%;
   z-index:998;
-
+  @include media (s){
+    margin: 30% 0 0 2%;
+  }
  .fa-twitter{
   margin-bottom:1em;
 }
@@ -279,6 +302,11 @@ Vue.use(VueKinesis)
   transform: skew(50deg, -44deg);
   -webkit-transform: skew(50deg, -44deg);
   -ms-transform:skew(50deg, -44deg);
+  // スマホ
+  @include media(s){
+    width:23px;
+    height:32px;
+  }
 }
 
 /*Hamburger line */
@@ -382,6 +410,7 @@ transform: rotate(135deg);
   -webkit-transition: all 0.8s ease ;
   -o-transition: all 0.8s ease ;
   transition: all 0.8s ease ;
+
 }
 .menu-wrap .menu > div:before{
   content: '';
@@ -394,7 +423,7 @@ transform: rotate(135deg);
 }
 .menu-wrap .menu > div > div {
   text-align: center;
-  max-width:90vw;
+  max-width:100vw;
   max-height: 100vw;
   opacity: 0;
   -webkit-transition: opacity 0.8s ease;

@@ -81,6 +81,9 @@ export default {
   font-size: 4rem;
   font-family:DINK, sans-serif;
   opacity:0.8;
+  @include media(s){
+    font-size:1.6rem;
+  }
 }
 .item {
   display: inline-block;

@@ -56,7 +56,7 @@
   }
   // メディアクエリ @include media(例s、mなど){}の形で取得可能
   @mixin media($breakpoint){
-    @media #{map-get($breakpoints, $breakpont)}{
+    @media #{map-get($breakpoints, $breakpoint)}{
       @content;
     }
   }
