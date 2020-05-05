@@ -26,32 +26,55 @@
 .container{
   background-color: none;
   width:$main-wrap;
-  margin:5% 0 0 10% ;
+  margin:5% 0 0 10%;
+  // スマホ
+  @include media(s){
+  width:70%;
+  margin: 10% 20% 0 20%;
+  }
   .header{
     background-color: none;
     display:flex;
     flex-direction:row;
     justify-content: center;
-    }
+      @include media(s){
+        flex-direction: column;
+      }
     .para{
       flex:1;
       text-align:justify;
       justify-content:center;
-    }
       .title {
-        width:60%;
+        width:90%;
         height:auto;
         margin-bottom:2em;
-      }
-      .images{
-        width:50%;
-        background-color: none;
-        .bird_woman{
-          width:auto;
-          height:95%;
-          margin-left:-60%;
+        // スマホ
+        @include media(s){
+        width:60%;
         }
       }
     }
+    .images{
+      width:70%;
+      background-color: none;
+      @include media(s){
+        width:100%;
+        text-align: center;
+      }
+      .bird_woman{
+        width:100%;
+        height:100%;
+      }
+    }
+  }
+}
+ // 建設中
+ .more_to_come{
+   transform:rotate(10deg);
+   margin-top:10%;
+   @include media(s){
+     margin-top:-20%;
 
+   }
+ }
 </style>

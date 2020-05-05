@@ -2,18 +2,18 @@
 <div class="whoweare page">
     <div class="container">
       <div class="header">
-      <div class="images">
-        <kinesis-container event="scroll">
-          <kinesis-element :strength="100"  type="translate" axis="x" transform-origin="right top">
-              <img src="../assets/bird_1.svg" alt="" class="bird1">
-          </kinesis-element>
-        </kinesis-container>
-      </div>
         <div class="title">
           <h1><img src="../assets/whoweare.svg" alt="" class="title"></h1>
         </div>
       <div class="introduction">
         <p>従来のスタイルを打ちやぶる《モダン》で《クール》なwebサイトを、スピーディーに。デザインxテクノロジーで”貴方らしさ”を極限まで追求する。Key4d lab.が目指すのはそんな新しいプラットフォームです。</p>
+      </div>
+      <div class="images">
+        <kinesis-container event="scroll">
+          <kinesis-element :strength="700"  type="translate" axis="x">
+              <img src="../assets/bird_1.svg"  class="bird1">
+          </kinesis-element>
+        </kinesis-container>
       </div>
     </div>
     <div class="article_wrapper">
@@ -62,7 +62,7 @@
             Key4d lab.はデザインとテクノロジーの可能性を信じています。
           </p>
           <div class="policy_img3">
-            <img src="@/assets/whale_jump.png" alt="" class="whale">
+            <img src="@/assets/whale.png" alt="" class="whale">
           </div>
         </div>
       </div>
@@ -91,6 +91,11 @@
     justify-content: center;
     margin: 5% 10% 0 10%;
     background-color: none;
+    // スマホ
+    @include media(s){
+    width:70%;
+    margin: 5% 20% 0 20%;
+  }
     .header{
       display:flex;
       flex-direction:column;
@@ -98,19 +103,24 @@
         width: 80%;
         height: auto;
         margin-bottom:2em;
+      // 　スマホ
+      @include media(s){
+        width:90%;
+        margin-bottom:5%;
+      }
       }
       p{
         text-align: justify;
       }
       .images {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: space-between;
         flex:1;
         background-color:none;
         .bird1 {
           position: relative;
-          width: 10%;
+          width: 80%;
           transform: rotateY(180deg);
           z-index: 999;
         }
@@ -144,9 +154,16 @@
           }
           .candy_cigar {
             width:100%;
+            @include media(s){
+              width:60%;
+              height:auto;
+            }
           }
           .paint_ur_color {
             width: 70%;
+            @include media(s){
+              width:60%;
+            }
           }
         }
       }
@@ -157,6 +174,10 @@
             background-color: none;
             width: 100%;
             margin-top:5%;
+            @include media(s){
+              width:150%;
+              margin-left:-20%;
+            }
           }
         }
 

@@ -27,6 +27,9 @@
               <font-awesome-icon :icon="['fab', 'instagram']" size="2x" class="fa-2"/></a>
           </div>
           <div class="inner_module">
+            <div class="member_img">
+            <img src="@/assets/nyahon2.png" alt="">
+          </div>
             <div class="skill_set">
             <div class="skills"><font-awesome-icon :icon="['fas', 'drafting-compass']" size="3x" class="skill_icon" /><P>デザイン</p></div>
             <div class="skills"><font-awesome-icon :icon="['fas', 'code']" size="3x" class="skill_icon" /><p>コーディング</p></div>
@@ -35,11 +38,8 @@
           <div class="skills"><font-awesome-icon :icon="['fab', 'app-store']" size="3x" class="skill_icon" /><p>アプリケーション開発</p></div>
             <div class="skills"><font-awesome-icon :icon="['fas', 'poll']" size="3x" class="skill_icon"/><p>ブランド戦略・マーケティング</p></div>
             </div>
-            <div class="member_img">
-            <img src="@/assets/nyahon2.png" alt="">
-          </div>
-            </div>
 
+            </div>
         </div>
         <div class="member_module">
           <h2>TAQUU/たくぅ</h2>
@@ -82,11 +82,17 @@
     background-color: none;
     width:$main-wrap;
     margin:5% 0 0 10% ;
+    // スマホ
+    @include media(s){
+    width:70%;
+    margin: 10% 20% 0 20%;
+    }
     .header{
       background-color: none;
       display:flex;
-      flex-direction:row;
-      justify-content: space-between;
+      flex-direction:column;
+      justify-content: center;
+      align-items:center;
       // スマホ
       @include media(s){
         flex-direction:column;
@@ -95,23 +101,36 @@
         position:relative;
         width:6em;
         top: 5%;
-        left:0;
+        left:40%;
+        // スマホ
+        @include media(s){
+        width:20%;
+        left:25%;
+        }
       }
       .birds{
         width:12em;
         position:relative;
+        // スマホ
+        @include media(s){
+        width:30%;
+        }
       }
       .para{
         width:100%;
         background-color: none;
         display:block;
-        text-align:justify;
+        text-align:center;
         align-content: center;
-        margin:2em auto;
+        margin:2% auto 0 auto;
         .title{
           width:40%;
           height:auto;
           margin-bottom:2em;
+          // スマホ
+          @include media(s){
+          width:80%;
+          }
         }
       }
     }
@@ -121,6 +140,10 @@
       flex-direction:column;
       align-content:space-between;
       margin-top:10%;
+      // スマホ
+      @include media(s){
+      margin-top:0;
+      }
       .inner_module{
         flex:1;
         display:flex;
@@ -148,9 +171,13 @@
         display:flex;
         flex:1;
         background-color: none;
-        justify-content:flex-end;
+        justify-content:left;
          .fa-twitter{
            margin-right:1.5rem;
+         }
+         // スマホ
+         @include media(s){
+         font-size:0.75rem;
          }
       }
       .skill_set{
@@ -176,6 +203,10 @@
         }
         .skill_icon{
           margin: 3%;
+          // スマホ
+          @include media(s){
+          font-size:0.75rem;
+          }
         }
         p{
           margin:2%;
@@ -183,5 +214,16 @@
       }
     }
   }
+}
+.sp_only{
+ @include media(xl){
+   display:none;
+ }
+ @include media(l){
+   display:none;
+ }
+ @include media(m){
+ display:none;
+ }
 }
 </style>

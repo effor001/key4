@@ -94,7 +94,7 @@ Vue.use(VueKinesis)
     font-size:1.25rem;
     line-height: 2.4;
     @include media(s){
-      font-size:1rem;
+      font-size:0.75rem;
       line-height:1.7;
     }
   }
@@ -107,12 +107,15 @@ Vue.use(VueKinesis)
   h2{
     font-size:3rem;
     @include media(s){
-      font-size:1rem;
+      font-size:1.75rem;
     }
   }
 
   h3{
     font-size:1.5rem;
+    @include media(s){
+      font-size:1rem;
+    }
   }
   a{
     text-decoration:none;
@@ -127,6 +130,7 @@ Vue.use(VueKinesis)
 
   #app{
     background: none;
+
   }
 
   .page{
@@ -242,10 +246,12 @@ Vue.use(VueKinesis)
   position:fixed;
   font-size: 1rem;
   color:$font-color;
-  margin:10% 0 0 2%;
+  margin:20% 0 0 2%;
   z-index:998;
+  // スマホ
   @include media (s){
     margin: 30% 0 0 2%;
+    font-size:0.75rem;
   }
  .fa-twitter{
   margin-bottom:1em;
@@ -306,6 +312,9 @@ Vue.use(VueKinesis)
   @include media(s){
     width:23px;
     height:32px;
+    top:0;
+    left:0;
+    transform:none;
   }
 }
 
@@ -395,8 +404,8 @@ transform: rotate(135deg);
   background-size: cover;
   background-position: no-repeat;
   border-radius:50%;
-  width: 200vw;
-  height: 200vw;
+  width: 250vw;
+  height: 250vw;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -452,7 +461,7 @@ color: #483688;
 .more_to_come{
   font-family: DINK,sans-serif;
   font-size: 5rem;
-  transform: rotate(20deg);
+  transform: rotate(-20deg);
   transform-origin:bottom;
   &::before{
     content:"MORE to come! ";
@@ -460,6 +469,9 @@ color: #483688;
     height:100%;
     position:relative;
     border-style: solid;
+  }
+  @include media(s){
+    font-size:1rem;
   }
 }
 </style>
