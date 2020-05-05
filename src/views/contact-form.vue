@@ -2,7 +2,7 @@
     <div class="contactForm page">
         <div class="header">
             <img src="../assets/contact.svg" alt="" class="title" id="top">
-            <h2>{{contents()}}</h2>
+            <h3>{{contents()}}</h3>
             <p v-if="flag === 1">ご意見・ご相談、料金のお見積もりなど、お気軽にお問合わせください。<br>
                 お問合せ内容の確認後、担当者よりご連絡させていただきます。</p>
             <p v-else-if="flag === 2">以下の入力内容をご確認の上、間違いがなければ「送信する」ボタンを押してください。<br>
