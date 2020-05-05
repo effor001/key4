@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="formList">
+        <div class="formList" v-if="flag != 3">
             <form method="post" action="" @submit="sendEmail">
                 <div v-if="errors.length" class="errorSection">
                     <b>下記の項目は必須項目です:</b>
@@ -52,44 +52,56 @@
                 </div>
                 <div class="contentsName section">
                     <label for="subject">SUBJECT</label>
-                    <input v-if="flag === 1" :value="contents()"  name="subject" id="subject" readonly>
-                    <input v-if="flag === 2" :value="contents()"  name="subject" id="subject" readonly>
+                    <input v-if="flag === 1" :value="contents()" name="subject" id="subject" readonly>
+                    <input v-if="flag === 2" :value="contents()" name="subject" id="subject" readonly>
                 </div>
                 <div class="companyName section">
-                    <label for="companyName"><span v-if="flag === 1" class="need">必須</span>COMPANY</label>
-                    <input v-if="flag === 1" v-model="companyName" type="text" placeholder="KEY4d LAB." name="companyName" id="companyName" required>
-                    <input v-if="flag === 2" :value="companyName" type="text"  name="companyName" id="companyName" readonly>
+                    <label for="companyName"><span v-if="flag === 1"
+                            class="need">必須</span>COMPANY</label>
+                    <input v-if="flag === 1" v-model="companyName" type="text" placeholder="KEY4d LAB."
+                        name="companyName" id="companyName" required>
+                    <input v-if="flag === 2" :value="companyName" type="text" name="companyName" id="companyName"
+                        readonly>
                 </div>
                 <div class="yourName section">
                     <label for="yourName"><span v-if="flag === 1" class="need">必須</span>NAME</label>
-                    <input v-if="flag === 1" v-model="yourName" type="text" placeholder="鈴木一郎" name="yourName" id="yourName" required>
-                    <input v-if="flag === 2" :value="yourName" type="text"  name="yourName" id="yourName" readonly>
+                    <input v-if="flag === 1" v-model="yourName" type="text" placeholder="鈴木一郎" name="yourName"
+                        id="yourName" required>
+                    <input v-if="flag === 2" :value="yourName" type="text" name="yourName" id="yourName" readonly>
                 </div>
                 <div class="eMail section">
                     <label for="eMail"><span v-if="flag === 1" class="need">必須</span>E-MAIL</label>
-                    <input v-if="flag === 1" v-model="eMail" type="email" placeholder="key4d.lab@gmail.com" name="eMail" id="eMail" required>
-                    <input v-if="flag === 2" :value="eMail" type="email"  name="eMail" id="eMail" readonly>
+                    <input v-if="flag === 1" v-model="eMail" type="email" placeholder="key4d.lab@gmail.com" name="eMail"
+                        id="eMail" required>
+                    <input v-if="flag === 2" :value="eMail" type="email" name="eMail" id="eMail" readonly>
                 </div>
                 <div class="telNumber section">
                     <label for="telNumber"><span v-if="flag === 1" class="need">必須</span>TEL</label>
-                    <input v-if="flag === 1" v-model="telNumber" type="telephone" placeholder="0312345678" name="telNumber" id="telNumber" required>
-                    <input v-if="flag === 2" :value="telNumber" type="telephone"  name="telNumber" id="telNumber" readonly>
+                    <input v-if="flag === 1" v-model="telNumber" type="telephone" placeholder="0312345678"
+                        name="telNumber" id="telNumber" required>
+                    <input v-if="flag === 2" :value="telNumber" type="telephone" name="telNumber" id="telNumber"
+                        readonly>
                 </div>
                 <div class="hpURL section">
                     <label for="hpURL"><span v-if="flag === 1" class="any">任意</span>URL</label>
-                    <input v-if="flag === 1" v-model="hpURL" ype="url" placeholder="https://key4d-lab.com" name="hpURL" id="hpURL">
-                    <input v-if="flag === 2" :value="hpURL" type="url"  name="hpURL" id="hpURL" readonly>
+                    <input v-if="flag === 1" v-model="hpURL" ype="url" placeholder="https://key4d-lab.com" name="hpURL"
+                        id="hpURL">
+                    <input v-if="flag === 2" :value="hpURL" type="url" name="hpURL" id="hpURL" readonly>
                 </div>
                 <div class="message section">
                     <label for="message"><span v-if="flag === 1" class="any">任意</span>MESSAGE</label>
-                    <textarea v-if="flag === 1" v-model="message" type="text" placeholder="お問い合わせ内容を入力" name="message" id="message"></textarea>
-                    <textarea v-if="flag === 2" :value="message" type="text"  name="message" id="message" readonly></textarea>
+                    <textarea v-if="flag === 1" v-model="message" type="text" placeholder="お問い合わせ内容を入力" name="message"
+                        id="message"></textarea>
+                    <textarea v-if="flag === 2" :value="message" type="text" name="message" id="message"
+                        readonly></textarea>
                 </div>
                 <div class="btnSection">
-                    <router-link to="/contact/" class="btnBack" v-if="flag === 1"><span>お問い合わせ選択画面に戻る</span></router-link>
-                    <input class="btnConfirm" v-if="flag === 1" @click="checkForm()" type="button" name="btnConfirm" value="入力内容を確認する">
+                    <router-link to="/contact/" class="btnBack" v-if="flag === 1"><span>お問い合わせ選択画面に戻る</span>
+                    </router-link>
+                    <input class="btnConfirm" v-if="flag === 1" @click="checkForm()" type="button" name="btnConfirm"
+                        value="入力内容を確認する">
                     <button class="btnBack" v-if="flag === 2" @click="flagBack()">お問い合わせ入力画面に戻る</button>
-                    <input class="btnConfirm" v-if="flag === 2" @click="" type="submit" name="submit" value="送信する">
+                    <input class="btnConfirm" v-if="flag === 2" type="submit" name="submit" value="送信する">
                 </div>
             </form>
         </div>
@@ -107,7 +119,7 @@
     import emailjs from "emailjs-com";
     export default {
         props: ["id"],
-        data(){
+        data() {
             return {
                 flag: 1,
                 isActive: true,
@@ -121,88 +133,90 @@
             }
         },
         methods: {
-            contents: function(){
-                if(this.$route.params.id === "web"){
+            contents: function () {
+                if (this.$route.params.id === "web") {
                     return "WEB制作のご依頼・お見積り"
-                }else if(this.$route.params.id === "illustration"){
+                } else if (this.$route.params.id === "illustration") {
                     return "イラスト制作のご依頼・お見積り"
-                }else if(this.$route.params.id === "appUI"){
+                } else if (this.$route.params.id === "appUI") {
                     return "アプリUI設計のご依頼・お見積り"
-                }else if(this.$route.params.id === "otherDev"){
+                } else if (this.$route.params.id === "otherDev") {
                     return "その他制作のご依頼・お見積り"
-                }else if(this.$route.params.id === "plan"){
+                } else if (this.$route.params.id === "plan") {
                     return "各種プランについて"
-                }else if(this.$route.params.id === "otherAbout"){
+                } else if (this.$route.params.id === "otherAbout") {
                     return "その他のご質問・ご相談"
-                }else if(this.$route.params.id === "media"){
+                } else if (this.$route.params.id === "media") {
                     return "メディア取材・掲載"
-                }else{
+                } else {
                     return "その他"
                 }
-            }, 
-            flagNext: function(){
-                this.flag += 1;
             },
-            flagBack: function(){
+            flagBack: function () {
                 this.flag -= 1;
             },
-            checkForm: function(){
-                if(this.companyName && this.yourName && this.eMail && this.telNumber){
+            checkForm: function () {
+                if (this.companyName && this.yourName && this.eMail && this.telNumber) {
                     this.flag += 1;
                 }
                 this.errors = [];
-                if(!this.companyName){
+                if (!this.companyName) {
                     this.errors.push('『会社名』を入力してください');
                 }
-                if(!this.yourName){
+                if (!this.yourName) {
                     this.errors.push('『お名前』を入力してください');
                 }
-                if(!this.eMail){
+                if (!this.eMail) {
                     this.errors.push('『メールアドレス』を入力してください');
                 }
-                if(!this.telNumber){
+                if (!this.telNumber) {
                     this.errors.push('『電話番号』を入力してください');
                 }
             },
-            sendEmail: (e) => {
-                const vm = this;
+            sendEmail: function (e) {
+                event.preventDefault()
+                let self = this
                 emailjs.sendForm("default_service", "template_2hGuzGGu", e.target, 'user_fN1iN1ZGaGhk9Q7OYIfX9')
-                    .then((result)=>{
-                        console.log('SUCCESS!', result.status, result.text);
-                        window.alert('送信されました');
-                        vm.flagNext();
-                    },(error)=>{
-                        console.log('FAILED...', error);
-                        window.alert('送信に失敗しました');
+                    .then((result) => {
+                        console.log('SUCCESS!', result.status, result.text)
+                        self.flag += 1;
+                    }, (error) => {
+                        console.log('FAILED...', error)
+                        window.alert('送信に失敗しました')
                     });
-                event.preventDefault();
+
             }
         }
     };
 </script>
 
 <style lang="scss" scoped>
-    .contactForm{
+    .contactForm {
         width: 70%;
         margin: 0 15%;
-        overflow-y:scroll;
-        &::-webkit-scrollbar{
-        display:none;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
         }
-        .header{
+
+        .header {
             width: 100%;
             margin-top: 3em;
-            img{
+
+            img {
                 width: 25%;
             }
-            .formFlow{
+
+            .formFlow {
                 width: 100%;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
                 margin-bottom: 3em;
-                .stepBoxActive{
+
+                .stepBoxActive {
                     width: 25%;
                     display: flex;
                     flex-direction: row;
@@ -212,18 +226,21 @@
                     box-sizing: border-box;
                     justify-content: center;
                     text-align: center;
-                    p.stepName{
+
+                    p.stepName {
                         font-size: 1em;
                         padding-left: 1em;
                         color: white;
                     }
-                    p.stepNumber{
+
+                    p.stepNumber {
                         font-size: 1em;
                         font-weight: bold;
                         color: white;
                     }
                 }
-                .stepBoxNonActive{
+
+                .stepBoxNonActive {
                     width: 25%;
                     display: flex;
                     flex-direction: row;
@@ -232,34 +249,41 @@
                     box-sizing: border-box;
                     justify-content: center;
                     text-align: center;
-                    p.stepName{
+
+                    p.stepName {
                         font-size: 1em;
                         padding-left: 1em;
                     }
-                    p.stepNumber{
+
+                    p.stepNumber {
                         font-size: 1em;
                         font-weight: bold;
                     }
                 }
             }
         }
-        .formList{
+
+        .formList {
             width: 100%;
-            form{
+
+            form {
                 width: 100%;
                 margin-bottom: 3em;
-                .section{
+
+                .section {
                     width: 100%;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     margin-bottom: 1em;
                     align-items: baseline;
-                    label{
+
+                    label {
                         width: 20%;
                         text-align: left;
                         font-size: 1em;
-                        span.need{
+
+                        span.need {
                             font-size: 0.6em;
                             color: white;
                             border: none;
@@ -268,7 +292,8 @@
                             padding: 0.4em 1.5em;
                             margin-right: 1em;
                         }
-                        span.any{
+
+                        span.any {
                             font-size: 0.6em;
                             color: white;
                             border: none;
@@ -278,7 +303,8 @@
                             margin-right: 1em;
                         }
                     }
-                    input{
+
+                    input {
                         width: 70%;
                         text-align: left;
                         padding: 1em;
@@ -287,7 +313,8 @@
                         background: #f9f9f9;
                         font-size: 1em;
                     }
-                    textarea{
+
+                    textarea {
                         width: 70%;
                         height: 20vh;
                         text-align: justify;
@@ -297,7 +324,8 @@
                         background: #f9f9f9;
                         font-size: 1em;
                     }
-                    p{
+
+                    p {
                         width: 70%;
                         text-align: left;
                         border: none;
@@ -306,23 +334,28 @@
                         margin-bottom: 0em;
                     }
                 }
-                .errorSection{
+
+                .errorSection {
                     width: 100%;
                     border: none;
-                    b{
+
+                    b {
                         color: #d63447;
                     }
-                    li{
+
+                    li {
                         color: #d63447;
                     }
                 }
-                .btnSection{
+
+                .btnSection {
                     width: 100%;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     margin-top: 2em;
-                    .btnConfirm{
+
+                    .btnConfirm {
                         width: 60%;
                         background: #75b79e;
                         padding: 1em;
@@ -331,7 +364,8 @@
                         font-size: 1em;
                         font-weight: bold;
                     }
-                    .btnBack{
+
+                    .btnBack {
                         width: 33%;
                         text-align: center;
                         border: 3px solid #75b79e;
@@ -344,10 +378,13 @@
                 }
             }
         }
-        .sendComplete{
+
+        .sendComplete {
             text-align: center;
             margin-bottom: 5em;
-        }.backHome{
+        }
+
+        .backHome {
             background: $font-color;
             color: white;
             padding: 1em 5em;
