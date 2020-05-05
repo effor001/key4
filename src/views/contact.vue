@@ -1,13 +1,15 @@
 <template>
   <div class="contact page">
     <div class="main container1">
-      <div class="images">
+      <div class="imagesSection">
         <img src="../assets/astronaut002_0.png" alt="" class="astro">
-        <img src="../assets/bird_4.svg" alt="" class="bird">
       </div>
       <div class="para">
-        <img src="../assets/contact.svg" alt="" class="title">
-        <p>弊社にご関心をお持ちいただきまして、誠にありがとうございます。ご意見・ご相談、制作依頼のお見積もりなど、お気軽にお問い合わせください。
+        <div class="titleSection">
+          <img src="../assets/contact.svg" alt="" class="title">
+          <img src="../assets/bird_4.svg" alt="" class="bird">
+        </div>
+        <p>KEY4d LAB.にご関心をお持ちいただきまして、誠にありがとうございます。ご意見・ご相談、制作依頼のお見積もりなど、お気軽にお問い合わせください。
           お問い合わせ内容の確認後、速やかに担当者からご連絡差し上げます。下記のお問い合わせ内容を選択してください。</p>
       </div>
     </div>
@@ -20,20 +22,20 @@
       <div class="contactSubject">
         <h2> お仕事のご依頼</h2>
         <div class="subjectSelect">
-          <a href="#" class="btn-animation-02"><span>WEB制作のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
-          <a href="#" class="btn-animation-02"><span>イラスト制作のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
-          <a href="#" class="btn-animation-02"><span>アプリUI設計のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
-          <a href="#" class="btn-animation-02"><span>その他のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
+          <router-link to="/contact/web" class="btn-animation-02"><span>WEB制作のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
+          <router-link to="/contact/illustration" class="btn-animation-02"><span>イラスト制作のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
+          <router-link to="/contact/appUI" class="btn-animation-02"><span>アプリUI設計のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
+          <router-link to="/contact/otherDev" class="btn-animation-02"><span>その他のご依頼・お見積り   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
         </div>
         <h2> KEY4d LAB.に関するご質問</h2>
         <div class="subjectSelect">
-          <a href="#" class="btn-animation-02"><span>各種プランについて   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
-          <a href="#" class="btn-animation-02"><span>その他のご質問・ご相談   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
+          <router-link to="/contact/plan" class="btn-animation-02"><span>各種プランについて   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
+          <router-link to="/contact/otherAbout" class="btn-animation-02"><span>その他のご質問・ご相談   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
         </div>
         <h2> その他</h2>
         <div class="subjectSelect">
-          <a href="#" class="btn-animation-02"><span>メディア取材・掲載   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
-          <a href="#" class="btn-animation-02"><span>その他   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></a>
+          <router-link to="/contact/media" class="btn-animation-02"><span>メディア取材・掲載   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
+          <router-link to="/contact/other" class="btn-animation-02"><span>その他   <font-awesome-icon :icon="['fas', 'arrow-right']" size="1x" class="fa-1" /></span></router-link>
         </div>
       </div>
     </div>
@@ -49,15 +51,48 @@
   }
 </script>
 <style lang="scss" scoped>
+.contact{
+  width: 100%;
   .container1 {
     display: flex;
     flex-direction: row;
-    margin-top: -7em;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 3em 15%;
+    .imagesSection{
+      width: 40%;
+      text-align: center;
+      img.astro{
+        width: 90%;
+      }
+    }
+    .para{
+      width: 60%;
+      text-align: left;
+      .titleSection{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .title{
+          width: 60%;
+          margin-bottom: -3em;
+        }
+        img.bird{
+          width: 30%;
+        }
+      }
+      p{
+        width: 95%;
+        text-align: justify;
+      }
+    }  
   }
-
   .container2 {
     width: 70%;
-    margin: -5em 15% 5em 15%;
+    margin: 5em 15% 5em 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +167,7 @@
           height: 100%;
           position: absolute;
           top: 0;
-          transition: .2s;
+          transition: .5s;
         }
 
         .btn-animation-02::before {
@@ -155,50 +190,5 @@
       }
     }
   }
-
-  .para {
-    width: 50%;
-    text-align: justify;
-    justify-content: center;
-    margin: 20em 5em 10em 10em;
-
-    .title {
-      width: 18em;
-      height: auto;
-      margin-bottom: 2em;
-    }
-
-    p {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-    }
-  }
-
-  .images {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .astro {
-      width: 22em;
-      display: block;
-      position: absolute;
-      margin: 0em 5em auto;
-      z-index: 1;
-    }
-
-    .bird {
-      width: 8em;
-      position: relative;
-      top: -13em;
-      right: -52em;
-      transform: matrix(0.97, -0.22, 0.22, 0.97, 0, 0);
-    }
-
-  }
+}
 </style>
